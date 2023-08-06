@@ -5,9 +5,9 @@
 
 ## **OBJECTIVE:**
 
-1. A face based attendance system incorporates facial recognition technology to recognize and verify an employee’s or student facial features and to record attendance automatically. 
+1. 얼굴 기반 출석 시스템은 얼굴 인식 기술을 통합하여 직원 또는 학생의 얼굴 특징을 인식 및 확인하고 자동으로 출석을 기록합니다.  
 
-2. A facial recognition attendance system is a non-contact approach to managing employees in a business significantly, when they are out on the field.
+2. 안면 인식 출퇴근 시스템은 비즈니스에서 직원들이 현장에 있을 때 비접촉 방식으로 직원을 크게 관리할 수 있는 방법입니다.
 
 
 ## **STEPS TO FOLLOW IN THIS PROJECT:**
@@ -15,10 +15,20 @@
 ### **1. Git clone and change directory**
 
 ```bash
-$ git clone https://github.com/VK-Ant/AttendanceSystem-JetsonAGX.git
+$ git clone https://github.com/jkf87/AttendanceSystem-Jetsonnano4G_fixed.git
 $ cd AttendanceSystem-JetsonAGX
 ```
-Make sure the path is correct.
+메모리 관리를 위해 1시간마다 메모리를 비워줍니다.
+try-except 구문을 추가해서 오류가 날 경우 전체 프로세서가 멈추는 것을 방지합니다.
+
+cmake나 dlib 라이브러리 설치가 안되는 경우 
+```
+sudo apt-get update
+sudo apt-get install -y build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+```
+이 부분을 참고하세요. (젯슨맘)
+
+
 
 ### **2. Install prerequisite library using requirement file**
 
@@ -34,9 +44,9 @@ Check that Opencv,numpy,dlib,cmake, and datetime are installed on your AGX devic
 ```bash
 $ python3 initial_data_capture.py
 ```
-After run the above cmd: Enter your name in terminal
+위의 명령어를 실행한 후 터미널에 이름을 입력합니다.
 
-Make sure your initial images stored in "Attendance_data" folder.
+초기 이미지가 '출석_데이터' 폴더에 저장되었는지 확인합니다.
 
 ### **4. Attendance system (Main script)**
 
@@ -66,21 +76,21 @@ $ python3 main.py
 ```bash
 $ python3 delete_image.py
 ```
-After run the above cmd: Enter the name in terminal
+위의 명령어를 실행한 후 터미널에 이름을 입력합니다.
 
-Make sure image deleted or not in Attendance_data folder.
+Attendance_data 폴더에 이미지가 삭제되었는지 확인합니다.
 
 ## **PROJECT DESCRIPTION:**
 
-1. Install requirement file.
+1. 요구 사항 파일을 설치합니다.
 
-2. Capture your input image of store it in "Attendance_data" folder. 
+2. 입력 이미지를 캡쳐하여 "Attendance_data" 폴더에 저장합니다. 
 
-3. Next Recognized faces in the given input data using DLIB library.
+3. 다음 DLIB 라이브러리를 사용하여 주어진 입력 데이터에서 얼굴을 인식합니다.
 
-4. Then Attendance entered in excel sheet.
+4. 엑셀 시트에 출석을 입력합니다.
 
-5. If you want to delete the image throughout the folder use 5th step mentioned above.
+5. 폴더 전체 이미지를 삭제하려면 위의 5번째 단계를 수행합니다.
 
 
 ### **THANK YOU & CREDIT**
