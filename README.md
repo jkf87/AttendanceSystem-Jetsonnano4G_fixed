@@ -1,4 +1,4 @@
-# **FACE BASED ATTENDANCE SYSTEM USING NVIDIA JETSON AGX XAVIER DEVICE**
+# **FACE BASED ATTENDANCE SYSTEM USING NVIDIA JETSON Nano 4G DEVICE**
 
 ![20230409_100542_1](https://user-images.githubusercontent.com/75832198/230754595-8df2c106-41a3-4782-acce-9d3b63601444.jpg)
 
@@ -18,17 +18,39 @@
 $ git clone https://github.com/jkf87/AttendanceSystem-Jetsonnano4G_fixed.git
 $ cd AttendanceSystem-Jetsonnano4G_fixed
 ```
-메모리 관리를 위해 1시간마다 메모리를 비워줍니다.
-try-except 구문을 추가해서 오류가 날 경우 전체 프로세서가 멈추는 것을 방지합니다.
+원본 코드에서 메모리 관리와 try-except 구문을 추가해서 오류가 날 경우 전체 프로세서가 멈추는 것을 방지합니다.
 
 cmake나 dlib 라이브러리 설치가 안되는 경우 
 ```
 sudo apt-get update
 sudo apt-get install -y build-essential cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 ```
-이 부분을 참고하세요. (젯슨맘)
+이 부분을 시도
+
+저는 파이썬 3.6버전 설치
 
 
+```
+
+sudo apt install python3.6
+python -m pip install numpy==1.18.5 --no-build-isolation
+pip install cmake
+pip install dlib==19.7.0
+```
+
+으로 dlib 설치 후
+
+```
+pip install face_recognition
+```
+로 환경을 구성한 다음 
+
+
+
+```
+sudo python3 main.py
+```
+로 실행하였습니다.
 
 ### **2. Install prerequisite library using requirement file**
 
