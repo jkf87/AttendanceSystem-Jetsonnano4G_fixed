@@ -1,5 +1,5 @@
-#python 3.8.10
-opencv-python==4.5.2
+#python 3.6
+opencv-python==4.5.2.54
 face_recognition==1.2.3
-numpy==1.17.4
+numpy==1.18.4
 pytz
