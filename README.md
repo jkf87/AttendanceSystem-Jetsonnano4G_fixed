@@ -16,7 +16,7 @@
 
 ```bash
 $ git clone https://github.com/jkf87/AttendanceSystem-Jetsonnano4G_fixed.git
-$ cd AttendanceSystem-JetsonAGX
+$ cd AttendanceSystem-Jetsonnano4G_fixed
 ```
 메모리 관리를 위해 1시간마다 메모리를 비워줍니다.
 try-except 구문을 추가해서 오류가 날 경우 전체 프로세서가 멈추는 것을 방지합니다.
